@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="quadcopter">
+    <link name="base_link">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>1.5</mass>
+        <inertia>
+          <ixx>0.029125</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.029125</iyy>
+          <iyz>0</iyz>
+          <izz>0.055225</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.4 0.4 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.4 0.4 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.8 0.8 0.8 1</ambient>
+          <diffuse>0.8 0.8 0.8 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Front Left Motor -->
+    <link name="motor_fl">
+      <pose>0.2 0.2 0.05 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Front Right Motor -->
+    <link name="motor_fr">
+      <pose>-0.2 0.2 0.05 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Rear Left Motor -->
+    <link name="motor_rl">
+      <pose>0.2 -0.2 0.05 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Rear Right Motor -->
+    <link name="motor_rr">
+      <pose>-0.2 -0.2 0.05 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0</iyz>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.02</radius>
+            <length>0.05</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- IMU Sensor -->
+    <link name="imu_link">
+      <pose>0 0 0.05 0 0 0</pose>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>true</always_on>
+        <update_rate>100</update_rate>
+        <visualize>true</visualize>
+        <topic>quadcopter/sensors/imu</topic>
+        <frame_name>imu_link</frame_name>
+        <ros>
+          <namespace>/quadcopter</namespace>
+          <remapping>sensors/imu:=sensors/imu</remapping>
+        </ros>
+      </sensor>
+    </link>
+
+    <!-- GPS Sensor -->
+    <link name="gps_link">
+      <pose>0 0 0.05 0 0 0</pose>
+      <sensor name="gps_sensor" type="gps">
+        <always_on>true</always_on>
+        <update_rate>10</update_rate>
+        <visualize>true</visualize>
+        <topic>quadcopter/sensors/gps</topic>
+        <frame_name>gps_link</frame_name>
+        <ros>
+          <namespace>/quadcopter</namespace>
+          <remapping>sensors/gps:=sensors/gps</remapping>
+        </ros>
+      </sensor>
+    </link>
+
+    <!-- Altitude Sensor -->
+    <link name="altitude_link">
+      <pose>0 0 -0.05 0 0 0</pose>
+      <sensor name="altitude_sensor" type="ray">
+        <always_on>true</always_on>
+        <update_rate>50</update_rate>
+        <visualize>true</visualize>
+        <topic>quadcopter/sensors/altitude</topic>
+        <frame_name>altitude_link</frame_name>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.1</min>
+            <max>50</max>
+            <resolution>0.01</resolution>
+          </range>
+        </ray>
+        <ros>
+          <namespace>/quadcopter</namespace>
+          <remapping>sensors/altitude:=sensors/altitude</remapping>
+        </ros>
+      </sensor>
+    </link>
+
+    <!-- Joints -->
+    <joint name="motor_fl_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>motor_fl</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="motor_fr_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>motor_fr</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="motor_rl_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>motor_rl</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="motor_rr_joint" type="revolute">
+      <parent>base_link</parent>
+      <child>motor_rr</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="imu_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>imu_link</child>
+    </joint>
+
+    <joint name="gps_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>gps_link</child>
+    </joint>
+
+    <joint name="altitude_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>altitude_link</child>
+    </joint>
+
+    <!-- Plugin for quadcopter dynamics -->
+    <plugin name="quadcopter_plugin" filename="libgazebo_ros_planar_move.so">
+      <commandTopic>quadcopter/control/velocity</commandTopic>
+      <odometryTopic>quadcopter/state/odometry</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometryRate>20</odometryRate>
+      <robotBaseFrame>base_link</robotBaseFrame>
+    </plugin>
+
+    <!-- Plugin for motor control -->
+    <plugin name="motor_controller" filename="libgazebo_ros_force.so">
+      <bodyName>base_link</bodyName>
+      <topicName>quadcopter/control/motors</topicName>
+    </plugin>
+  </model>
+</sdf> 

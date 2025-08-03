@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  quadcopter-simulation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: quadcopter-sim
+    environment:
+      - DISPLAY=${DISPLAY}
+      - ROS_DOMAIN_ID=0
+      - GAZEBO_MODEL_PATH=/workspace/models
+      - GAZEBO_RESOURCE_PATH=/workspace/worlds
+    volumes:
+      - .:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ~/.gazebo:/root/.gazebo
+    network_mode: host
+    privileged: true
+    stdin_open: true
+    tty: true
+    command: bash
+
+  gazebo-gui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gazebo-gui
+    environment:
+      - DISPLAY=${DISPLAY}
+      - ROS_DOMAIN_ID=0
+    volumes:
+      - .:/workspace
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ~/.gazebo:/root/.gazebo
+    network_mode: host
+    privileged: true
+    command: gazebo --verbose /workspace/worlds/empty_world.world
+
+  ros2-controller:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ros2-controller
+    environment:
+      - ROS_DOMAIN_ID=0
+    volumes:
+      - .:/workspace
+    network_mode: host
+    depends_on:
+      - quadcopter-simulation
+    command: ros2 launch quadcopter_controller controller.launch.py
+
+  joystick-interface:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: joystick-interface
+    environment:
+      - ROS_DOMAIN_ID=0
+    volumes:
+      - .:/workspace
+      - /dev/input:/dev/input:ro
+    network_mode: host
+    privileged: true
+    depends_on:
+      - quadcopter-simulation
+    command: ros2 launch joystick_interface joystick.launch.py
+
+networks:
+  default:
+    driver: bridge 

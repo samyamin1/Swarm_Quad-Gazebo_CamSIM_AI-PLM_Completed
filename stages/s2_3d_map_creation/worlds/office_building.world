@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="office_building">
+    <!-- Physics settings -->
+    <physics name="default_physics" default="0" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.81</gravity>
+    </physics>
+
+    <!-- Lighting -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Office Building Structure -->
+    
+    <!-- Ground Floor -->
+    <!-- Main Lobby -->
+    <model name="lobby_floor">
+      <pose>0 0 0.1 0 0 0</pose>
+      <link name="lobby_floor_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>20 15 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>20 15 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Lobby Walls -->
+    <model name="lobby_walls">
+      <pose>0 0 1.5 0 0 0</pose>
+      <link name="lobby_walls_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>20 0.2 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>20 0.2 3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Reception Desk -->
+    <model name="reception_desk">
+      <pose>0 5 0.8 0 0 0</pose>
+      <link name="desk_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>4 1 1.6</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>4 1 1.6</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.4 0.2 1</ambient>
+            <diffuse>0.6 0.4 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- First Floor -->
+    <!-- Office Floor -->
+    <model name="first_floor">
+      <pose>0 0 3.1 0 0 0</pose>
+      <link name="first_floor_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>20 15 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>20 15 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Office Rooms -->
+    <model name="office_room_1">
+      <pose>5 5 1.5 0 0 0</pose>
+      <link name="office_wall_1">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 4 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 4 3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Office Desk -->
+    <model name="office_desk_1">
+      <pose>5 3 0.8 0 0 0</pose>
+      <link name="desk_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 1 1.6</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 1 1.6</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.4 0.2 1</ambient>
+            <diffuse>0.6 0.4 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Conference Room -->
+    <model name="conference_room">
+      <pose>-5 0 1.5 0 0 0</pose>
+      <link name="conference_wall_1">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8 0.2 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8 0.2 3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Conference Table -->
+    <model name="conference_table">
+      <pose>-5 0 0.8 0 0 0</pose>
+      <link name="table_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>4 2 1.6</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>4 2 1.6</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.6 0.4 0.2 1</ambient>
+            <diffuse>0.6 0.4 0.2 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Second Floor -->
+    <!-- Executive Floor -->
+    <model name="second_floor">
+      <pose>0 0 6.1 0 0 0</pose>
+      <link name="second_floor_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>20 15 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>20 15 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Executive Office -->
+    <model name="executive_office">
+      <pose>8 8 4.5 0 0 0</pose>
+      <link name="executive_wall_1">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>6 0.2 3</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>6 0.2 3</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Executive Desk -->
+    <model name="executive_desk">
+      <pose>8 6 3.8 0 0 0</pose>
+      <link name="executive_desk_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3 2 1.6</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3 2 1.6</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.4 0.2 0.1 1</ambient>
+            <diffuse>0.4 0.2 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Stairwell -->
+    <model name="stairwell">
+      <pose>15 0 1.5 0 0 0</pose>
+      <link name="stairwell_wall">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 2 6</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 2 6</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.7 0.7 0.7 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Elevator -->
+    <model name="elevator">
+      <pose>-15 0 1.5 0 0 0</pose>
+      <link name="elevator_wall">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 2 6</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 2 6</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Lighting -->
+    <!-- Ceiling Lights -->
+    <model name="ceiling_light_1">
+      <pose>0 0 5.5 0 0 0</pose>
+      <link name="light_link">
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <emissive>1 1 1 1</emissive>
+          </material>
+        </visual>
+      </link>
+      <light type="point" name="ceiling_light_1">
+        <pose>0 0 0 0 0 0</pose>
+        <diffuse>1 1 1 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <attenuation>
+          <range>10</range>
+          <constant>0.5</constant>
+          <linear>0.01</linear>
+          <quadratic>0.001</quadratic>
+        </attenuation>
+        <cast_shadows>true</cast_shadows>
+      </light>
+    </model>
+
+    <!-- Spawn quadcopter -->
+    <include>
+      <uri>model://quadcopter</uri>
+      <pose>0 0 8 0 0 0</pose>
+    </include>
+
+    <!-- GUI settings -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>20 -20 15 0 0.785 0.785</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <!-- Plugin for ROS 2 bridge -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+        <remapping>model_states:=model_states</remapping>
+        <remapping>link_states:=link_states</remapping>
+      </ros>
+    </plugin>
+
+    <!-- Plugin for ROS 2 control -->
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/quadcopter</robotNamespace>
+      <robotParam>robot_description</robotParam>
+    </plugin>
+  </world>
+</sdf> 

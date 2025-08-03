@@ -1,0 +1,45 @@
+flight_controller:
+  ros__parameters:
+    # PID gains for attitude control
+    pid_gains:
+      roll:
+        p: 1.0
+        i: 0.1
+        d: 0.05
+      pitch:
+        p: 1.0
+        i: 0.1
+        d: 0.05
+      yaw:
+        p: 2.0
+        i: 0.1
+        d: 0.1
+      throttle:
+        p: 1.0
+        i: 0.1
+        d: 0.05
+    
+    # Control limits
+    limits:
+      max_velocity: 10.0  # m/s
+      max_angular_velocity: 2.0  # rad/s
+      max_altitude: 100.0  # m
+      max_roll_angle: 0.5  # rad
+      max_pitch_angle: 0.5  # rad
+    
+    # Control rates
+    control_rate: 100.0  # Hz
+    sensor_rate: 50.0  # Hz
+    
+    # Safety parameters
+    safety:
+      emergency_landing_altitude: 0.5  # m
+      max_tilt_angle: 0.8  # rad
+      low_battery_threshold: 0.2  # percentage
+    
+    # Motor mixing matrix (simplified quadcopter)
+    motor_mixing:
+      front_left: [1.0, 1.0, 1.0, 1.0]   # [throttle, roll, pitch, yaw]
+      front_right: [1.0, -1.0, 1.0, -1.0]
+      rear_left: [1.0, 1.0, -1.0, -1.0]
+      rear_right: [1.0, -1.0, -1.0, 1.0] 
