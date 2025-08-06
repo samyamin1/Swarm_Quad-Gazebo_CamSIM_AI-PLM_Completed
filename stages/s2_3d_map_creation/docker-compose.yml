@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  hospital-simulation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hospital_simulation
+    environment:
+      - DISPLAY=${DISPLAY}
+      - GAZEBO_MODEL_PATH=/workspace/worlds
+      - GAZEBO_RESOURCE_PATH=/workspace/worlds
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./worlds:/workspace/worlds:ro
+      - ./test_hospital_world.py:/workspace/test_hospital_world.py:ro
+      - ./launch:/workspace/launch:ro
+    network_mode: host
+    command: >
+      bash -c "
+        source /opt/ros/humble/setup.bash &&
+        source /workspace/install/setup.bash &&
+        echo 'Starting Hospital World Test...' &&
+        python3 /workspace/test_hospital_world.py
+      "
+    depends_on:
+      - gazebo-gui
+
+  gazebo-gui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gazebo_gui
+    environment:
+      - DISPLAY=${DISPLAY}
+      - GAZEBO_MODEL_PATH=/workspace/worlds
+      - GAZEBO_RESOURCE_PATH=/workspace/worlds
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./worlds:/workspace/worlds:ro
+    network_mode: host
+    command: >
+      bash -c "
+        source /opt/ros/humble/setup.bash &&
+        source /workspace/install/setup.bash &&
+        echo 'Starting Gazebo with Hospital World...' &&
+        gazebo --verbose /workspace/worlds/hospital.world
+      "
+
+  ros2-controller:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ros2_controller
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    network_mode: host
+    command: >
+      bash -c "
+        source /opt/ros/humble/setup.bash &&
+        source /workspace/install/setup.bash &&
+        echo 'Starting ROS 2 Controller...' &&
+        ros2 launch quadcopter_controller controller.launch.py
+      "
+    depends_on:
+      - gazebo-gui
+
+networks:
+  default:
+    driver: bridge 

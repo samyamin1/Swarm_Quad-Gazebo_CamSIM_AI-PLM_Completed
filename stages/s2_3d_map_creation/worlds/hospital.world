@@ -1,0 +1,407 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <world name="hospital">
+    <!-- Physics settings -->
+    <physics name="default_physics" default="0" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.81</gravity>
+    </physics>
+
+    <!-- Lighting -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- Ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- Hospital Building Structure -->
+    
+    <!-- Ground Floor -->
+    <!-- Main Entrance -->
+    <model name="hospital_ground_floor">
+      <pose>0 0 0.1 0 0 0</pose>
+      <link name="ground_floor_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>30 25 0.2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30 25 0.2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Hospital Walls -->
+    <model name="hospital_walls">
+      <pose>0 0 2 0 0 0</pose>
+      <link name="walls_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>30 0.2 4</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>30 0.2 4</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.95 0.95 0.95 1</ambient>
+            <diffuse>0.95 0.95 0.95 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Emergency Room -->
+    <model name="emergency_room">
+      <pose>10 5 2 0 0 0</pose>
+      <link name="er_wall_1">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 8 4</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 8 4</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Emergency Room Equipment -->
+    <model name="er_equipment">
+      <pose>10 3 1 0 0 0</pose>
+      <link name="equipment_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 1 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 1 2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Patient Room -->
+    <model name="patient_room">
+      <pose>-10 5 2 0 0 0</pose>
+      <link name="patient_wall_1">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>0.2 6 4</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.2 6 4</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Patient Bed -->
+    <model name="patient_bed">
+      <pose>-10 3 0.5 0 0 0</pose>
+      <link name="bed_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.7 0.7 0.9 1</ambient>
+            <diffuse>0.7 0.7 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Corridor -->
+    <model name="main_corridor">
+      <pose>0 0 2 0 0 0</pose>
+      <link name="corridor_wall_1">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>25 0.2 4</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>25 0.2 4</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Second Floor -->
+    <!-- Operating Room -->
+    <model name="operating_room">
+      <pose>5 0 5 0 0 0</pose>
+      <link name="or_wall_1">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>8 0.2 4</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>8 0.2 4</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.95 0.95 0.95 1</ambient>
+            <diffuse>0.95 0.95 0.95 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Operating Table -->
+    <model name="operating_table">
+      <pose>5 0 4.5 0 0 0</pose>
+      <link name="table_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>3 1 1</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>3 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Medical Equipment -->
+    <model name="medical_equipment">
+      <pose>5 2 4.5 0 0 0</pose>
+      <link name="equipment_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1 1 2</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 2</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Stairwell -->
+    <model name="stairwell">
+      <pose>15 0 2 0 0 0</pose>
+      <link name="stairwell_wall">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 2 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 2 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.7 0.7 0.7 1</ambient>
+            <diffuse>0.7 0.7 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Elevator -->
+    <model name="elevator">
+      <pose>-15 0 2 0 0 0</pose>
+      <link name="elevator_wall">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>2 2 8</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2 2 8</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Lighting -->
+    <!-- Ceiling Lights -->
+    <model name="ceiling_light_1">
+      <pose>0 0 7.5 0 0 0</pose>
+      <link name="light_link">
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>0.5</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <emissive>1 1 1 1</emissive>
+          </material>
+        </visual>
+      </link>
+      <light type="point" name="ceiling_light_1">
+        <pose>0 0 0 0 0 0</pose>
+        <diffuse>1 1 1 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <attenuation>
+          <range>15</range>
+          <constant>0.5</constant>
+          <linear>0.01</linear>
+          <quadratic>0.001</quadratic>
+        </attenuation>
+        <cast_shadows>true</cast_shadows>
+      </light>
+    </model>
+
+    <!-- Emergency Exit Signs -->
+    <model name="exit_sign_1">
+      <pose>10 12 3 0 0 0</pose>
+      <link name="sign_link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>0.5 0.1 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>1 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Spawn quadcopter -->
+    <include>
+      <uri>model://quadcopter</uri>
+      <pose>0 0 10 0 0 0</pose>
+    </include>
+
+    <!-- GUI settings -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>30 -30 20 0 0.785 0.785</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <!-- Plugin for ROS 2 bridge -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/gazebo</namespace>
+        <remapping>model_states:=model_states</remapping>
+        <remapping>link_states:=link_states</remapping>
+      </ros>
+    </plugin>
+
+    <!-- Plugin for ROS 2 control -->
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/quadcopter</robotNamespace>
+      <robotParam>robot_description</robotParam>
+    </plugin>
+  </world>
+</sdf> 

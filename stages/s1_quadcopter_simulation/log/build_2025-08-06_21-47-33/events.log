@@ -1,0 +1,246 @@
+[0.000000] (-) TimerEvent: {}
+[0.000118] (quadcopter_controller) JobQueued: {'identifier': 'quadcopter_controller', 'dependencies': OrderedDict()}
+[0.000317] (quadcopter_controller) JobStarted: {'identifier': 'quadcopter_controller'}
+[0.015810] (quadcopter_controller) JobProgress: {'identifier': 'quadcopter_controller', 'progress': 'cmake'}
+[0.016376] (quadcopter_controller) Command: {'cmd': ['/usr/local/bin/cmake', '/Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/src/quadcopter_controller', '-DCMAKE_INSTALL_PREFIX=/Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/install/quadcopter_controller'], 'cwd': '/Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/build/quadcopter_controller', 'env': OrderedDict([('TERM_PROGRAM', 'vscode'), ('TERM', 'xterm-256color'), ('SHELL', '/bin/bash'), ('TMPDIR', '/var/folders/yp/zhpptt7d3r510khwt_jmzk5r0000gn/T/'), ('CONDA_SHLVL', '1'), ('TERM_PROGRAM_VERSION', '1.3.7'), ('CONDA_PROMPT_MODIFIER', '(base)'), ('GSETTINGS_SCHEMA_DIR_CONDA_BACKUP', ''), ('ZDOTDIR', '/Users/samyamin'), ('CURSOR_TRACE_ID', '68820746af164e368315f89fc5dc711f'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'undefined'), ('MallocNanoZone', '0'), ('USER', 'samyamin'), ('COMMAND_MODE', 'unix2003'), ('CONDA_EXE', '/opt/anaconda3/bin/conda'), ('SSH_AUTH_SOCK', '/private/tmp/com.apple.launchd.b6AHB3Y0Sy/Listeners'), ('VSCODE_PROFILE_INITIALIZED', '1'), ('__CF_USER_TEXT_ENCODING', '0x1F5:0x0:0x0'), ('PAGER', 'sh -c "head -n 10000 | cat"'), ('_CE_CONDA', ''), ('PATH', '/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/anaconda3/bin:/opt/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.10/bin'), ('GSETTINGS_SCHEMA_DIR', '/opt/anaconda3/share/glib-2.0/schemas'), ('USER_ZDOTDIR', '/Users/samyamin'), ('CONDA_PREFIX', '/opt/anaconda3'), ('__CFBundleIdentifier', 'com.todesktop.230313mzl4w4u92'), ('PWD', '/Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/build/quadcopter_controller'), ('COLCON', '1'), ('DISABLE_AUTO_UPDATE', 'true'), ('LANG', 'en_US.UTF-8'), ('CURSOR_AGENT', '1'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('XPC_FLAGS', '0x0'), ('_CE_M', ''), ('XPC_SERVICE_NAME', '0'), ('VSCODE_INJECTION', '1'), ('npm_config_yes', 'true'), ('SHLVL', '3'), ('HOME', '/Users/samyamin'), ('VSCODE_GIT_ASKPASS_MAIN', '/Applications/Cursor.app/Contents/Resources/app/extensions/git/dist/askpass-main.js'), ('PIP_NO_INPUT', 'true'), ('CONDA_PYTHON_EXE', '/opt/anaconda3/bin/python'), ('LOGNAME', 'samyamin'), ('VSCODE_GIT_IPC_HANDLE', '/var/folders/yp/zhpptt7d3r510khwt_jmzk5r0000gn/T/vscode-git-fc2d15c4f4.sock'), ('COMPOSER_NO_INTERACTION', '1'), ('CONDA_DEFAULT_ENV', 'base'), ('VSCODE_GIT_ASKPASS_NODE', '/Applications/Cursor.app/Contents/Frameworks/Cursor Helper (Plugin).app/Contents/MacOS/Cursor Helper (Plugin)'), ('GIT_ASKPASS', '/Applications/Cursor.app/Contents/Resources/app/extensions/git/dist/askpass.sh'), ('COLORTERM', 'truecolor'), ('_', '/usr/bin/env')]), 'shell': False}
+[0.104920] (-) TimerEvent: {}
+[0.210194] (-) TimerEvent: {}
+[0.315439] (-) TimerEvent: {}
+[0.420060] (-) TimerEvent: {}
+[0.521559] (-) TimerEvent: {}
+[0.626751] (-) TimerEvent: {}
+[0.730817] (-) TimerEvent: {}
+[0.836053] (-) TimerEvent: {}
+[0.941328] (-) TimerEvent: {}
+[1.046468] (-) TimerEvent: {}
+[1.151623] (-) TimerEvent: {}
+[1.254662] (-) TimerEvent: {}
+[1.354981] (-) TimerEvent: {}
+[1.460138] (-) TimerEvent: {}
+[1.601922] (-) TimerEvent: {}
+[1.704969] (-) TimerEvent: {}
+[1.829138] (-) TimerEvent: {}
+[1.934289] (-) TimerEvent: {}
+[1.935085] (quadcopter_controller) StderrLine: {'line': b'CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[1.935340] (quadcopter_controller) StderrLine: {'line': b'  Compatibility with CMake < 3.10 will be removed from a future version of\n'}
+[1.935393] (quadcopter_controller) StderrLine: {'line': b'  CMake.\n'}
+[1.935433] (quadcopter_controller) StderrLine: {'line': b'\n'}
+[1.935470] (quadcopter_controller) StderrLine: {'line': b'  Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax\n'}
+[1.935506] (quadcopter_controller) StderrLine: {'line': b'  to tell CMake that the project requires at least <min> but has been updated\n'}
+[1.935539] (quadcopter_controller) StderrLine: {'line': b'  to work with policies introduced by <max> or earlier.\n'}
+[1.935566] (quadcopter_controller) StderrLine: {'line': b'\n'}
+[1.935596] (quadcopter_controller) StderrLine: {'line': b'\n'}
+[2.036762] (-) TimerEvent: {}
+[2.138351] (-) TimerEvent: {}
+[2.243157] (-) TimerEvent: {}
+[2.348292] (-) TimerEvent: {}
+[2.453449] (-) TimerEvent: {}
+[2.558605] (-) TimerEvent: {}
+[2.663813] (-) TimerEvent: {}
+[2.768955] (-) TimerEvent: {}
+[2.872184] (-) TimerEvent: {}
+[2.977371] (-) TimerEvent: {}
+[3.082511] (-) TimerEvent: {}
+[3.186778] (-) TimerEvent: {}
+[3.291962] (-) TimerEvent: {}
+[3.397210] (-) TimerEvent: {}
+[3.504851] (-) TimerEvent: {}
+[3.605231] (-) TimerEvent: {}
+[3.710395] (-) TimerEvent: {}
+[3.815521] (-) TimerEvent: {}
+[3.916117] (-) TimerEvent: {}
+[4.020093] (-) TimerEvent: {}
+[4.121550] (-) TimerEvent: {}
+[4.226719] (-) TimerEvent: {}
+[4.327410] (-) TimerEvent: {}
+[4.432567] (-) TimerEvent: {}
+[4.536813] (-) TimerEvent: {}
+[4.638268] (-) TimerEvent: {}
+[4.743446] (-) TimerEvent: {}
+[4.848616] (-) TimerEvent: {}
+[4.953447] (-) TimerEvent: {}
+[5.058611] (-) TimerEvent: {}
+[5.163773] (-) TimerEvent: {}
+[5.268911] (-) TimerEvent: {}
+[5.370092] (-) TimerEvent: {}
+[5.475245] (-) TimerEvent: {}
+[5.580408] (-) TimerEvent: {}
+[5.683277] (-) TimerEvent: {}
+[5.786786] (-) TimerEvent: {}
+[5.891975] (-) TimerEvent: {}
+[5.997340] (-) TimerEvent: {}
+[6.102500] (-) TimerEvent: {}
+[6.202811] (-) TimerEvent: {}
+[6.308030] (-) TimerEvent: {}
+[6.408282] (-) TimerEvent: {}
+[6.508511] (-) TimerEvent: {}
+[6.613697] (-) TimerEvent: {}
+[6.718894] (-) TimerEvent: {}
+[6.821845] (-) TimerEvent: {}
+[6.922806] (-) TimerEvent: {}
+[7.024106] (-) TimerEvent: {}
+[7.126118] (-) TimerEvent: {}
+[7.231282] (-) TimerEvent: {}
+[7.333398] (-) TimerEvent: {}
+[7.438673] (-) TimerEvent: {}
+[7.543869] (-) TimerEvent: {}
+[7.649016] (-) TimerEvent: {}
+[7.752505] (-) TimerEvent: {}
+[7.853052] (-) TimerEvent: {}
+[7.958329] (-) TimerEvent: {}
+[8.059458] (-) TimerEvent: {}
+[8.164760] (-) TimerEvent: {}
+[8.264927] (-) TimerEvent: {}
+[8.368792] (-) TimerEvent: {}
+[8.471516] (-) TimerEvent: {}
+[8.577200] (-) TimerEvent: {}
+[8.677651] (-) TimerEvent: {}
+[8.778968] (-) TimerEvent: {}
+[8.884176] (-) TimerEvent: {}
+[8.988666] (-) TimerEvent: {}
+[9.094151] (-) TimerEvent: {}
+[9.198625] (-) TimerEvent: {}
+[9.303850] (-) TimerEvent: {}
+[9.407708] (-) TimerEvent: {}
+[9.513053] (-) TimerEvent: {}
+[9.614930] (-) TimerEvent: {}
+[9.719741] (-) TimerEvent: {}
+[9.821715] (-) TimerEvent: {}
+[9.926887] (-) TimerEvent: {}
+[10.032032] (-) TimerEvent: {}
+[10.136781] (-) TimerEvent: {}
+[10.239513] (-) TimerEvent: {}
+[10.339847] (-) TimerEvent: {}
+[10.445069] (-) TimerEvent: {}
+[10.550243] (-) TimerEvent: {}
+[10.655443] (-) TimerEvent: {}
+[10.760638] (-) TimerEvent: {}
+[10.864831] (-) TimerEvent: {}
+[10.967203] (-) TimerEvent: {}
+[11.070120] (-) TimerEvent: {}
+[11.172300] (-) TimerEvent: {}
+[11.274222] (-) TimerEvent: {}
+[11.379798] (-) TimerEvent: {}
+[11.484991] (-) TimerEvent: {}
+[11.586779] (-) TimerEvent: {}
+[11.691933] (-) TimerEvent: {}
+[11.797143] (-) TimerEvent: {}
+[11.902335] (-) TimerEvent: {}
+[12.003439] (-) TimerEvent: {}
+[12.108223] (-) TimerEvent: {}
+[12.213408] (-) TimerEvent: {}
+[12.318693] (-) TimerEvent: {}
+[12.420109] (-) TimerEvent: {}
+[12.521693] (-) TimerEvent: {}
+[12.632490] (-) TimerEvent: {}
+[12.738362] (-) TimerEvent: {}
+[12.843535] (-) TimerEvent: {}
+[12.948665] (-) TimerEvent: {}
+[13.053434] (-) TimerEvent: {}
+[13.158584] (-) TimerEvent: {}
+[13.263932] (-) TimerEvent: {}
+[13.289515] (quadcopter_controller) StdoutLine: {'line': b'-- The C compiler identification is AppleClang 12.0.0.12000032\n'}
+[13.368921] (-) TimerEvent: {}
+[13.469267] (-) TimerEvent: {}
+[13.590447] (-) TimerEvent: {}
+[13.695597] (-) TimerEvent: {}
+[13.767648] (quadcopter_controller) StdoutLine: {'line': b'-- The CXX compiler identification is AppleClang 12.0.0.12000032\n'}
+[13.800627] (-) TimerEvent: {}
+[13.905765] (-) TimerEvent: {}
+[14.012472] (-) TimerEvent: {}
+[14.117635] (-) TimerEvent: {}
+[14.221679] (-) TimerEvent: {}
+[14.322062] (-) TimerEvent: {}
+[14.427244] (-) TimerEvent: {}
+[14.532386] (-) TimerEvent: {}
+[14.636759] (-) TimerEvent: {}
+[14.738159] (-) TimerEvent: {}
+[14.843333] (-) TimerEvent: {}
+[14.863583] (quadcopter_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[14.948364] (-) TimerEvent: {}
+[15.053506] (-) TimerEvent: {}
+[15.158654] (-) TimerEvent: {}
+[15.271588] (-) TimerEvent: {}
+[15.372063] (-) TimerEvent: {}
+[15.477248] (-) TimerEvent: {}
+[15.582389] (-) TimerEvent: {}
+[15.687523] (-) TimerEvent: {}
+[15.788331] (-) TimerEvent: {}
+[15.893583] (-) TimerEvent: {}
+[15.998720] (-) TimerEvent: {}
+[16.103476] (-) TimerEvent: {}
+[16.205045] (-) TimerEvent: {}
+[16.306110] (-) TimerEvent: {}
+[16.401822] (quadcopter_controller) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[16.407165] (-) TimerEvent: {}
+[16.512308] (-) TimerEvent: {}
+[16.617446] (-) TimerEvent: {}
+[16.722607] (-) TimerEvent: {}
+[16.827769] (-) TimerEvent: {}
+[16.932909] (-) TimerEvent: {}
+[17.036780] (-) TimerEvent: {}
+[17.138503] (-) TimerEvent: {}
+[17.243877] (-) TimerEvent: {}
+[17.344179] (-) TimerEvent: {}
+[17.449397] (-) TimerEvent: {}
+[17.553434] (-) TimerEvent: {}
+[17.654988] (-) TimerEvent: {}
+[17.756189] (-) TimerEvent: {}
+[17.861455] (-) TimerEvent: {}
+[17.961892] (-) TimerEvent: {}
+[18.067064] (-) TimerEvent: {}
+[18.170103] (-) TimerEvent: {}
+[18.275304] (-) TimerEvent: {}
+[18.380479] (-) TimerEvent: {}
+[18.485656] (-) TimerEvent: {}
+[18.586766] (-) TimerEvent: {}
+[18.691961] (-) TimerEvent: {}
+[18.797133] (-) TimerEvent: {}
+[18.902370] (-) TimerEvent: {}
+[19.003430] (-) TimerEvent: {}
+[19.106079] (-) TimerEvent: {}
+[19.211275] (-) TimerEvent: {}
+[19.318589] (-) TimerEvent: {}
+[19.418803] (-) TimerEvent: {}
+[19.521843] (-) TimerEvent: {}
+[19.622686] (-) TimerEvent: {}
+[19.724907] (quadcopter_controller) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[19.725538] (-) TimerEvent: {}
+[19.725596] (quadcopter_controller) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[19.726258] (quadcopter_controller) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[19.737792] (quadcopter_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[19.830579] (-) TimerEvent: {}
+[19.935725] (-) TimerEvent: {}
+[20.036207] (-) TimerEvent: {}
+[20.136763] (-) TimerEvent: {}
+[20.243948] (-) TimerEvent: {}
+[20.349089] (-) TimerEvent: {}
+[20.453429] (-) TimerEvent: {}
+[20.558632] (-) TimerEvent: {}
+[20.625735] (quadcopter_controller) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[20.663692] (-) TimerEvent: {}
+[20.683793] (quadcopter_controller) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[20.684175] (quadcopter_controller) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[20.684966] (quadcopter_controller) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[20.728143] (quadcopter_controller) StderrLine: {'line': b'CMake Error at CMakeLists.txt:9 (find_package):\n'}
+[20.728935] (quadcopter_controller) StderrLine: {'line': b'  By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project\n'}
+[20.729205] (quadcopter_controller) StderrLine: {'line': b'  has asked CMake to find a package configuration file provided by\n'}
+[20.729361] (quadcopter_controller) StderrLine: {'line': b'  "ament_cmake", but CMake did not find one.\n'}
+[20.729488] (quadcopter_controller) StderrLine: {'line': b'\n'}
+[20.729721] (quadcopter_controller) StderrLine: {'line': b'  Could not find a package configuration file provided by "ament_cmake" with\n'}
+[20.729841] (quadcopter_controller) StderrLine: {'line': b'  any of the following names:\n'}
+[20.730131] (quadcopter_controller) StderrLine: {'line': b'\n'}
+[20.730233] (quadcopter_controller) StderrLine: {'line': b'    ament_cmakeConfig.cmake\n'}
+[20.730346] (quadcopter_controller) StderrLine: {'line': b'    ament_cmake-config.cmake\n'}
+[20.730450] (quadcopter_controller) StderrLine: {'line': b'\n'}
+[20.730522] (quadcopter_controller) StderrLine: {'line': b'  Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set\n'}
+[20.730653] (quadcopter_controller) StderrLine: {'line': b'  "ament_cmake_DIR" to a directory containing one of the above files.  If\n'}
+[20.730758] (quadcopter_controller) StderrLine: {'line': b'  "ament_cmake" provides a separate development package or SDK, be sure it\n'}
+[20.730917] (quadcopter_controller) StderrLine: {'line': b'  has been installed.\n'}
+[20.731000] (quadcopter_controller) StderrLine: {'line': b'\n'}
+[20.731055] (quadcopter_controller) StderrLine: {'line': b'\n'}
+[20.731139] (quadcopter_controller) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[20.747234] (quadcopter_controller) CommandEnded: {'returncode': 1}
+[20.766986] (-) TimerEvent: {}
+[20.864521] (quadcopter_controller) JobEnded: {'identifier': 'quadcopter_controller', 'rc': 1}
+[20.865535] (-) EventReactorShutdown: {}

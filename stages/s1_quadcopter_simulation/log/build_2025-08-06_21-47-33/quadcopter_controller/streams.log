@@ -1,0 +1,41 @@
+[0.018s] Invoking command in '/Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/build/quadcopter_controller': CONDA_PROMPT_MODIFIER=(base) SHLVL=3 _=/usr/bin/env /usr/local/bin/cmake /Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/src/quadcopter_controller -DCMAKE_INSTALL_PREFIX=/Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/install/quadcopter_controller
+[1.935s] CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[1.935s]   Compatibility with CMake < 3.10 will be removed from a future version of
+[1.935s]   CMake.
+[1.935s] 
+[1.935s]   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+[1.935s]   to tell CMake that the project requires at least <min> but has been updated
+[1.935s]   to work with policies introduced by <max> or earlier.
+[1.935s] 
+[1.935s] 
+[13.290s] -- The C compiler identification is AppleClang 12.0.0.12000032
+[13.767s] -- The CXX compiler identification is AppleClang 12.0.0.12000032
+[14.863s] -- Detecting C compiler ABI info
+[16.402s] -- Detecting C compiler ABI info - done
+[19.725s] -- Check for working C compiler: /usr/bin/cc - skipped
+[19.725s] -- Detecting C compile features
+[19.726s] -- Detecting C compile features - done
+[19.738s] -- Detecting CXX compiler ABI info
+[20.625s] -- Detecting CXX compiler ABI info - done
+[20.683s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[20.684s] -- Detecting CXX compile features
+[20.685s] -- Detecting CXX compile features - done
+[20.728s] CMake Error at CMakeLists.txt:9 (find_package):
+[20.729s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[20.729s]   has asked CMake to find a package configuration file provided by
+[20.729s]   "ament_cmake", but CMake did not find one.
+[20.729s] 
+[20.729s]   Could not find a package configuration file provided by "ament_cmake" with
+[20.730s]   any of the following names:
+[20.730s] 
+[20.730s]     ament_cmakeConfig.cmake
+[20.730s]     ament_cmake-config.cmake
+[20.730s] 
+[20.730s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[20.730s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[20.731s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[20.731s]   has been installed.
+[20.731s] 
+[20.731s] 
+[20.731s] -- Configuring incomplete, errors occurred!
+[20.747s] Invoked command in '/Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/build/quadcopter_controller' returned '1': CONDA_PROMPT_MODIFIER=(base) SHLVL=3 _=/usr/bin/env /usr/local/bin/cmake /Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/src/quadcopter_controller -DCMAKE_INSTALL_PREFIX=/Users/samyamin/Downloads/Swarm_Gazebo_CAMSIM_PLM-Quad/stages/s1_quadcopter_simulation/install/quadcopter_controller
