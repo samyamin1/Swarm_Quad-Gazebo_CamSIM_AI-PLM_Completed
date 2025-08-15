@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>mission_planning</name>
+  <name>performance_optimizer</name>
   <version>0.1.0</version>
-  <description>Mission Planning &amp; Execution for AI-powered swarm operations</description>
+  <description>Performance Optimization for AI-powered swarm operations</description>
   <maintainer email="developer@example.com">AI Swarm Team</maintainer>
   <license>MIT</license>
 
@@ -18,8 +18,7 @@
   <depend>tf2_ros</depend>
   <depend>tf2_geometry_msgs</depend>
   <depend>visualization_msgs</depend>
-  <depend>action_msgs</depend>
-  <depend>action_tutorials_interfaces</depend>
+  <depend>diagnostic_msgs</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
