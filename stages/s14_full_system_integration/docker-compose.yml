@@ -1,0 +1,212 @@
+version: '3.8'
+
+services:
+  # Stage 1: Quadcopter Simulation (Gazebo)
+  gazebo_simulation:
+    build: 
+      context: ../s1_quadcopter_simulation
+      dockerfile: Dockerfile
+    container_name: swarm_gazebo_simulation
+    environment:
+      - DISPLAY=${DISPLAY}
+      - GAZEBO_MODEL_PATH=/opt/ros/humble/share/gazebo_models
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./worlds:/opt/ros/humble/share/gazebo/worlds
+    ports:
+      - "11345:11345"  # Gazebo server
+      - "11346:11346"  # Gazebo client
+    networks:
+      - swarm_network
+
+  # Stage 2: 3D Map Creation
+  map_creation:
+    build:
+      context: ../s2_3d_map_creation
+      dockerfile: Dockerfile
+    container_name: swarm_map_creation
+    depends_on:
+      - gazebo_simulation
+    networks:
+      - swarm_network
+
+  # Stage 3: Sensor Simulation
+  sensor_simulation:
+    build:
+      context: ../s3_sensor_simulation
+      dockerfile: Dockerfile
+    container_name: swarm_sensor_simulation
+    depends_on:
+      - gazebo_simulation
+      - map_creation
+    networks:
+      - swarm_network
+
+  # Stage 4: SLAM Engine
+  slam_engine:
+    build:
+      context: ../s4_slam_engine
+      dockerfile: Dockerfile
+    container_name: swarm_slam_engine
+    depends_on:
+      - sensor_simulation
+    networks:
+      - swarm_network
+
+  # Stage 5: Perception Language Model
+  perception_plm:
+    build:
+      context: ../s5_perception_plm
+      dockerfile: Dockerfile
+    container_name: swarm_perception_plm
+    depends_on:
+      - sensor_simulation
+    networks:
+      - swarm_network
+
+  # Stage 6: LLM Decision Engine
+  llm_decision_engine:
+    build:
+      context: ../s6_llm_decision_engine
+      dockerfile: Dockerfile
+    container_name: swarm_llm_decision_engine
+    depends_on:
+      - perception_plm
+    networks:
+      - swarm_network
+
+  # Stage 7: Navigation Control Loop
+  navigation_control:
+    build:
+      context: ../s7_navigation_control_loop
+      dockerfile: Dockerfile
+    container_name: swarm_navigation_control
+    depends_on:
+      - slam_engine
+      - llm_decision_engine
+    networks:
+      - swarm_network
+
+  # Stage 8: Swarm Coordination
+  swarm_coordination:
+    build:
+      context: ../s8_swarm_coordination
+      dockerfile: Dockerfile
+    container_name: swarm_coordination
+    depends_on:
+      - navigation_control
+    networks:
+      - swarm_network
+
+  # Stage 9: Multi-Sensor Fusion
+  sensor_fusion:
+    build:
+      context: ../s9_multi_sensor_fusion
+      dockerfile: Dockerfile
+    container_name: swarm_sensor_fusion
+    depends_on:
+      - sensor_simulation
+    networks:
+      - swarm_network
+
+  # Stage 10: Advanced SLAM
+  advanced_slam:
+    build:
+      context: ../s10_advanced_slam
+      dockerfile: Dockerfile
+    container_name: swarm_advanced_slam
+    depends_on:
+      - slam_engine
+      - sensor_fusion
+    networks:
+      - swarm_network
+
+  # Stage 11: Real-time AI Integration
+  realtime_ai_integration:
+    build:
+      context: ../s11_realtime_ai_integration
+      dockerfile: Dockerfile
+    container_name: swarm_realtime_ai
+    depends_on:
+      - perception_plm
+      - llm_decision_engine
+      - swarm_coordination
+    networks:
+      - swarm_network
+
+  # Stage 12: Mission Planning & Execution
+  mission_planning:
+    build:
+      context: ../s12_mission_planning_execution
+      dockerfile: Dockerfile
+    container_name: swarm_mission_planning
+    depends_on:
+      - realtime_ai_integration
+    networks:
+      - swarm_network
+
+  # Stage 13: Performance Optimization
+  performance_optimization:
+    build:
+      context: ../s13_performance_optimization
+      dockerfile: Dockerfile
+    container_name: swarm_performance_optimization
+    depends_on:
+      - realtime_ai_integration
+    networks:
+      - swarm_network
+
+  # Stage 14: Full System Integration (Main Controller)
+  system_integration:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: swarm_system_integration
+    depends_on:
+      - gazebo_simulation
+      - map_creation
+      - sensor_simulation
+      - slam_engine
+      - perception_plm
+      - llm_decision_engine
+      - navigation_control
+      - swarm_coordination
+      - sensor_fusion
+      - advanced_slam
+      - realtime_ai_integration
+      - mission_planning
+      - performance_optimization
+    environment:
+      - ROS_DOMAIN_ID=42
+    ports:
+      - "8080:8080"  # System monitoring dashboard
+      - "11311:11311"  # ROS 2 communication
+    networks:
+      - swarm_network
+    volumes:
+      - ./config:/opt/ros/humble/config
+      - ./logs:/opt/ros/humble/logs
+
+  # Web Dashboard for System Monitoring
+  web_dashboard:
+    image: nginx:alpine
+    container_name: swarm_web_dashboard
+    ports:
+      - "3000:80"
+    volumes:
+      - ./web_dashboard:/usr/share/nginx/html
+    depends_on:
+      - system_integration
+    networks:
+      - swarm_network
+
+networks:
+  swarm_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  swarm_data:
+    driver: local 
